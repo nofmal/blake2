@@ -1,0 +1,14 @@
+# Ignore everything BUT this very file
+*
+!.gitignore
+
+# Files in the same dir as .gitignore:
+!.gitattributes
+!build.zig
+!blake2.zig
+!LICENSE
+!README.rst
+
+# Folders in the same dir as .gitignore:
+!src
+!src/**
