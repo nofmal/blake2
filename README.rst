@@ -3,10 +3,14 @@ BLAKE2.zig
 
 This is a BLAKE2 implementation written in `Zig`_.
 
+There is already an implementation in the `standard library`_, but this library lets you pass an optional key and an arbitrary digest length (although still within limitations).
+
 Usage
 -----
 
-test.zig::
+test.zig
+
+.. code-block:: zig
 
     const blake2 = @import("blake2");
 
@@ -33,7 +37,9 @@ test.zig::
         try blake2s_context.final(&buffer1);
     }
 
-build.zig::
+build.zig
+
+.. code-block:: zig
 
     const builtin = @import("builtin");
     const std = @import("std");
@@ -53,4 +59,11 @@ build.zig::
         b.default_step.dependOn(run_test_step);
     }
 
+To-do
+-----
+
+* SIMD
+* ``b2sum`` example
+
 .. _`Zig`: https://ziglang.org
+.. _`standard library`: https://github.com/ziglang/zig/blob/master/lib/std/crypto/blake2.zig
