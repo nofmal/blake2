@@ -21,7 +21,6 @@ pub const Blake2sContext = b2s.Context;
 /// in-between the printed elements.
 pub fn printHash(comptime is_uppercase: bool, comptime with_space: bool, hash: []const u8) void {
     if (hash.len == 0) return;
-    hash[0] = 0x3f;
 
     const uppercase = if (is_uppercase) "X" else "x";
     const space = if (with_space) " " else "";
